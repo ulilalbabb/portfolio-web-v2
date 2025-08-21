@@ -3,31 +3,58 @@
 import Button from "../Button/Button";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
     const pathname = usePathname();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [active, setActive] = useState('#');
 
     const navItems = [
-        { label: 'Home', href: '#' },
-        { label: 'About', href: '#about' },
-        { label: 'Portfolio', href: '#portfolio' },
-        { label: 'Contact', href: '#contact' },
+        { label: 'Home', id: 'home' },
+        { label: 'About', id: 'about' },
+        { label: 'Portfolio', id: 'portfolio' },
+        { label: 'Contact', id: 'contact' },
     ]
 
-    const scrollToSection = (href: string) => {
-        if (href === '#') {
+    // Function to scroll to a specific section
+    const scrollToSection = (id: string) => {
+        if (id === '#') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            const section = document.getElementById(href.slice(1));
+            const section = document.getElementById(id);
             if (section) {
                 section.scrollIntoView({ behavior: 'smooth' });
             }
         }
     }
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    console.log("Active: ", entry.target.id)
+                    setActive(entry.target.id);
+                }
+            })
+        }, {
+            threshold: 0.6
+        })
+
+        navItems.forEach((item) => {
+            const section = document.getElementById(item.id);
+            console.log("Section: ", item.id, section)
+            if (section) observer.observe(section);
+            
+        })
+
+        return () => observer.disconnect();
+    }, [])
     return (
         <motion.nav className="w-full fixed top-0 left-0 z-10">
-            <div className="mx-auto px-6">
-                <div className="flex justify-between items-center h-16">
+            <div className="mx-auto px-15">
+                <div className="flex justify-between items-center h-20">
                     <motion.div 
                         className="font-bold text-2xl cursor-pointer"
                         onClick={() => scrollToSection('#')}
@@ -38,12 +65,13 @@ const Navbar = () => {
                             Ulil
                         </span>
                     </motion.div>
-                    <div className="flex items-center space-x-10">
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex items-center space-x-10">
                         {navItems.map((item) => (
                             <motion.div 
                                 key={item.label}
-                                className="cursor-pointer"
-                                onClick={() => scrollToSection(item.href)}
+                                className={`cursor-pointer ${active === item.id ? 'text-fuchsia-500' : 'text-gray-600'}`}
+                                onClick={() => scrollToSection(item.id)}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ delay: 0.1 }}
@@ -51,23 +79,59 @@ const Navbar = () => {
                                 initial={{ opacity: 0, y: -20 }}
                                 >
                                 {item.label}
-                                {pathname === item.href && (
-                                    <motion.div 
-                                        className="w-full h-1 bg-black"
-                                        layoutId="activeTab"
-                                        initial={false}
-                                        transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-                                    />
-                                )}
                             </motion.div>
                         ))}
 
                         <Button 
-                            variant='bg-black text-white px-4 py-2'
+                            variant='bg-black text-white px-4 py-2 hover:shadow-lg hover:bg-black/80'
                             onClick={() => scrollToSection('#contact')}>
                             Hire Me
                         </Button>
                     </div>
+                    <Button
+                        variant="md:hidden absolute top-4 right-4 text-black"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                        {isMobileMenuOpen ? <X /> : <Menu />}
+                    </Button>
+
+                    {/* Mobile Menu */}
+                        {isMobileMenuOpen && (
+                            <motion.div 
+                                className="absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-8"
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 }}
+                                >
+                                <Button 
+                                    variant='md:hidden absolute top-4 right-4 text-black'
+                                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                                    {isMobileMenuOpen ? <X /> : <Menu />}
+                                </Button>
+                                {navItems.map((item) => (
+                                    <motion.div 
+                                        key={item.label}
+                                        className="cursor-pointer"
+                                        onClick={() => {
+                                            scrollToSection(item.id);
+                                            setIsMobileMenuOpen(false);
+                                        }}
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        transition={{ delay: 0.1 }}
+                                        >
+                                        {item.label}
+                                    </motion.div>
+                                ))}
+                                <Button 
+                                    variant='bg-black text-white px-4 py-2 hover:shadow-lg hover:translate-y-[-3px] transition-transform duration-300 ease-in-out'
+                                    onClick={() => {
+                                        scrollToSection('#contact');
+                                        setIsMobileMenuOpen(false);
+                                    }}>
+                                    Hire Me
+                                </Button>
+                            </motion.div>
+                        )}
                 </div>
             </div>
         </motion.nav>
