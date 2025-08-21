@@ -2,14 +2,12 @@
 
 import Button from "../Button/Button";
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-    const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [active, setActive] = useState('#');
+    const [active, setActive] = useState('home');
 
     const navItems = [
         { label: 'Home', id: 'home' },
@@ -53,7 +51,7 @@ const Navbar = () => {
     }, [])
     return (
         <motion.nav className="w-full fixed top-0 left-0 z-10">
-            <div className="mx-auto px-15">
+            <div className="mx-auto px-4 lg:px-15">
                 <div className="flex justify-between items-center h-20">
                     <motion.div 
                         className="font-bold text-2xl cursor-pointer"
@@ -70,13 +68,12 @@ const Navbar = () => {
                         {navItems.map((item) => (
                             <motion.div 
                                 key={item.label}
-                                className={`cursor-pointer ${active === item.id ? 'text-fuchsia-500' : 'text-gray-600'}`}
+                                className={`cursor-pointer relative after:block after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full ${active === item.id ? 'after:w-full' : 'after:w-0 hover:after:w-full'}`}
                                 onClick={() => scrollToSection(item.id)}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ delay: 0.1 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                initial={{ opacity: 0, y: -20 }}
+                                
                                 >
                                 {item.label}
                             </motion.div>
@@ -89,9 +86,9 @@ const Navbar = () => {
                         </Button>
                     </div>
                     <Button
-                        variant="md:hidden absolute top-4 right-4 text-black"
+                        variant="md:hidden absolute top-6 right-4 text-black"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-                        {isMobileMenuOpen ? <X /> : <Menu />}
+                        <Menu />
                     </Button>
 
                     {/* Mobile Menu */}
@@ -103,7 +100,7 @@ const Navbar = () => {
                                 transition={{ delay: 0.1 }}
                                 >
                                 <Button 
-                                    variant='md:hidden absolute top-4 right-4 text-black'
+                                    variant='md:hidden absolute top-6 right-4 text-black'
                                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                                     {isMobileMenuOpen ? <X /> : <Menu />}
                                 </Button>
