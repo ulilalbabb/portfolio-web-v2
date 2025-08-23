@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Html",
+        "icon": "./html5.png"
+    },
+    {
+        "name": "Css",
+        "icon": "./css3.png"
+    },
+    {
+        "name": "Javascript",
+        "icon": "./javascript.png"
+    },
+    {
+        "name": "Typescript",
+        "icon": "./typescript.png"
+    },
+    {
+        "name": "React",
+        "icon": "./react.png"
+    },
+    {
+        "name": "Redux",
+        "icon": "./redux.png"
+    },
+    {
+        "name": "Vite",
+        "icon": "./Vite.png"
+    },
+    {
+        "name": "Next.js",
+        "icon": "./nextdotjs.png"
+    },
+    {
+        "name": "Tailwind",
+        "icon": "./tailwindcss.png"
+    },
+    {
+        "name": "Bootstrap",
+        "icon": "./bootstrap.png"
+    },
+    {
+        "name": "Sass",
+        "icon": "./sass.png"
+    },
+    {
+        "name": "Figma",
+        "icon": "./figma.png"
+    },
+    {
+        "name": "Framer Motion",
+        "icon": "./Motion.png"
+    },
+    {
+        "name": "Git",
+        "icon": "./git.png"
+    },
+    {
+        "name": "Github",
+        "icon": "./github.png"
+    }
+]

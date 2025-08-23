@@ -1,8 +1,7 @@
-import Image from "next/image";
-import Counter from "./components/fragments/Counter/Counter";
-import Navbar from "./components/elements/Navbar/Navbar";
-import HeroSection from "./components/elements/Hero/Hero";
-import About from "./components/elements/About/About";
+import Navbar from "./components/Navbar/Navbar";
+import HeroSection from "./components/Hero/Hero";
+import About from "./components/About/About";
+import MySkills from "./components/Skills/Skills";
 
 export default function Home() { 
   return (
@@ -10,7 +9,7 @@ export default function Home() {
       <Navbar></Navbar>
       <HeroSection></HeroSection>
       <About></About>
-      {/* <Counter></Counter> */}
+      <MySkills></MySkills>
     </>
   );
 }

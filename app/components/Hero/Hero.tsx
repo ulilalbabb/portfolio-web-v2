@@ -1,14 +1,15 @@
 'use client'
 
 import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
 
 const HeroSection = () => {
     return (
-        <section 
-            className="h-screen flex items-center bg-white px-8"
+        <main 
+            className="min-h-screen flex items-center bg-white px-6 pt-16"
             id="home">
-                <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                    <div className="text-left">
+                <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+                    <div>
                         <motion.h1
                             className="text-6xl font-extrabold text-black leading-tight"
                             initial={{ opacity: 0, x: -50 }}
@@ -35,15 +36,16 @@ const HeroSection = () => {
                         >
                             <a
                             href="#projects"
-                            className="px-6 py-3 bg-black text-white rounded-full shadow-md hover:bg-gray-800 transition"
+                            className="px-5 py-3 inline-flex bg-black text-white rounded-full hover:shadow-lg group hover:-translate-y-1 transition-transform duration-300 ease-in-out"
                             >
-                            View Projects
+                                View Projects 
+                                <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                             </a>
                             <a
                             href="#contact"
-                            className="px-6 py-3 border border-black rounded-full hover:bg-gray-100 transition"
+                            className="px-5 py-3 border border-black rounded-full hover:bg-gray-100 hover:-translate-y-1 transition-transform duration-300 ease-in-out"
                             >
-                            Contact Me
+                                Contact Me
                             </a>
                         </motion.div>
                     </div>
@@ -56,11 +58,11 @@ const HeroSection = () => {
                     <img
                         src="/ulil-2.jpg"
                         alt="Profile"
-                        className="rounded-2xl shadow-lg grayscale hover:grayscale-0 transition duration-700 w-100 h-100"
+                        className="rounded-2xl shadow-lg grayscale hover:grayscale-0 transition duration-700 w-100 h-100 md:w-100 md:h-100"
                     />
                     </motion.div>
                 </div>
-        </section>
+        </main>
     )
 }
 

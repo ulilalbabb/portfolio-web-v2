@@ -1,6 +1,6 @@
 'use client'
 
-import Button from "../Button/Button";
+import Button from "../elements/Button/Button";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -12,7 +12,8 @@ const Navbar = () => {
     const navItems = [
         { label: 'Home', id: 'home' },
         { label: 'About', id: 'about' },
-        { label: 'Portfolio', id: 'portfolio' },
+        { label: 'Skills', id: 'skills' },
+        { label: 'Projects', id: 'projects' },
         { label: 'Contact', id: 'contact' },
     ]
 
@@ -51,8 +52,8 @@ const Navbar = () => {
     }, [])
     return (
         <motion.nav className="w-full fixed top-0 left-0 z-10">
-            <div className="mx-auto px-4 lg:px-15">
-                <div className="flex justify-between items-center h-20">
+            <div className="px-4 lg:px-15">
+                <div className="flex justify-between items-center h-16">
                     <motion.div 
                         className="font-bold text-2xl cursor-pointer"
                         onClick={() => scrollToSection('#')}
