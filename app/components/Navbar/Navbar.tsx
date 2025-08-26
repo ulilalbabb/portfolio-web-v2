@@ -38,7 +38,7 @@ const Navbar = () => {
                 }
             })
         }, {
-            threshold: 0.6
+            threshold: 0.2
         })
 
         navItems.forEach((item) => {
@@ -69,7 +69,7 @@ const Navbar = () => {
                         {navItems.map((item) => (
                             <motion.div 
                                 key={item.label}
-                                className={`cursor-pointer relative after:block after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full ${active === item.id ? 'after:w-full' : 'after:w-0 hover:after:w-full'}`}
+                                className={`cursor-pointer relative after:block after:h-[2px] after:w-0 after:bg-yellow-600 after:transition-all after:duration-300 hover:after:w-full ${active === item.id ? 'after:w-full' : 'after:w-0 hover:after:w-full'}`}
                                 onClick={() => scrollToSection(item.id)}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
@@ -81,7 +81,7 @@ const Navbar = () => {
                         ))}
 
                         <Button 
-                            variant='bg-black text-white px-4 py-2 hover:shadow-lg hover:bg-black/80'
+                            variant='bg-yellow-600 px-4 py-2 hover:shadow-lg hover:bg-yellow-700'
                             onClick={() => scrollToSection('#contact')}>
                             Hire Me
                         </Button>
@@ -121,7 +121,7 @@ const Navbar = () => {
                                     </motion.div>
                                 ))}
                                 <Button 
-                                    variant='bg-black text-white px-4 py-2 hover:shadow-lg hover:translate-y-[-3px] transition-transform duration-300 ease-in-out'
+                                    variant='bg-yellow-600 text-white px-4 py-2 hover:shadow-lg hover:translate-y-[-3px] transition-transform duration-300 ease-in-out'
                                     onClick={() => {
                                         scrollToSection('#contact');
                                         setIsMobileMenuOpen(false);

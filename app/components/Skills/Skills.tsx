@@ -12,7 +12,7 @@ const MySkills = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-4xl font-extrabold mb-6"
+                    className="text-4xl font-extrabold mb-6 text-yellow-600"
                 >
                     My Expertise
                 </motion.h2>
@@ -26,7 +26,7 @@ const MySkills = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: index * 0.2 }}
                         viewport={{ once: true }}
-                        className="flex flex-col items-center gap-4"
+                        className="flex flex-col items-center gap-4 hover:text-yellow-600"
                     >
                         <img src={skill.icon} alt={skill.name} className="w-20 h-20 hover:scale-110 transition-transform duration-300" />
                         <p className="text-lg font-semibold">{skill.name}</p>

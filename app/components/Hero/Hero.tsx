@@ -16,7 +16,7 @@ const HeroSection = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            Hello, I’m <span className="underline decoration-gray-400">Ulil</span>
+                            Hello, I’m <span className="underline decoration-yellow-600">Ulil</span>
                         </motion.h1>
                         <motion.p
                             className="mt-4 text-xl text-gray-600"
@@ -36,14 +36,14 @@ const HeroSection = () => {
                         >
                             <a
                             href="#projects"
-                            className="px-5 py-3 inline-flex bg-black text-white rounded-full hover:shadow-lg group hover:-translate-y-1 transition-transform duration-300 ease-in-out"
+                            className="px-5 py-3 inline-flex bg-yellow-600 text-white rounded-full hover:shadow-lg group hover:-translate-y-1 transition-transform duration-300 ease-in-out"
                             >
                                 View Projects 
                                 <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                             </a>
                             <a
                             href="#contact"
-                            className="px-5 py-3 border border-black rounded-full hover:bg-gray-100 hover:-translate-y-1 transition-transform duration-300 ease-in-out"
+                            className="px-5 py-3 border border-yellow-600 text-yellow-600 rounded-full hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 ease-in-out"
                             >
                                 Contact Me
                             </a>
