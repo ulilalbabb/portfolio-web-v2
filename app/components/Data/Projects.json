@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Minimalis Ecommerce",
+        "image": "./minimalis.png",
+        "link": "https://minimalis-app.vercel.app/",
+        "github": "https://github.com/ulilalbabb/minimalis-app",
+        "description": "E-commerce application with product catalog features and a dynamic shopping cart system"
+    },
+    {
+        "id": 2,
+        "title": "videobelajar course",
+        "image": "./videobelajar.png",
+        "link": "https://education-course-livid.vercel.app/",
+        "github": "https://github.com/ulilalbabb/education-course", 
+        "description": "Course for learning online and improving skills"
+    },
+    {
+        "id": 3,
+        "title": "Online Streaming movie",
+        "image": "./chill.png",
+        "link": "https://chill-app-nine.vercel.app/",
+        "github": "https://github.com/ulilalbabb/chill-movie-app",
+        "description": "Provides the newest and most up-to-date film services"
+    },
+    {
+        "id": 4,
+        "title": "Todo List",
+        "image": "./todolist.png",
+        "link": "https://mission4-muhammad-ulil-albab-13054.vercel.app/",
+        "github": "https://github.com/ulilalbabb/Mission4-Muhammad-Ulil-Albab-13054",
+        "description": "Helps increase productivity by recording all activities and tasks"
+    }
+]

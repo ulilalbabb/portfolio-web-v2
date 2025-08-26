@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import HeroSection from "./components/Hero/Hero";
 import About from "./components/About/About";
 import MySkills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
 
 export default function Home() { 
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection></HeroSection>
       <About></About>
       <MySkills></MySkills>
+      <Projects></Projects>
     </>
   );
 }

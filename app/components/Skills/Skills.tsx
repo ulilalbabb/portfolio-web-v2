@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from "framer-motion"
-import skills from "../Data/Data.json"
+import skills from "../Data/Icon.json"
 
 const MySkills = () => {
     return (
