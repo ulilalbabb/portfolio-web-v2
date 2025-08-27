@@ -5,7 +5,8 @@
         "image": "./minimalis.png",
         "link": "https://minimalis-app.vercel.app/",
         "github": "https://github.com/ulilalbabb/minimalis-app",
-        "description": "E-commerce application with product catalog features and a dynamic shopping cart system"
+        "description": "E-commerce application with product catalog features and a dynamic shopping cart system",
+        "stack": ["./react.png", "./tailwindcss.png", "./redux.png"]
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "image": "./videobelajar.png",
         "link": "https://education-course-livid.vercel.app/",
         "github": "https://github.com/ulilalbabb/education-course", 
-        "description": "Course for learning online and improving skills"
+        "description": "Course for learning online and improving skills",
+        "stack": ["./react.png", "./tailwindcss.png", "./vite.png"]
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "image": "./chill.png",
         "link": "https://chill-app-nine.vercel.app/",
         "github": "https://github.com/ulilalbabb/chill-movie-app",
-        "description": "Provides the newest and most up-to-date film services"
+        "description": "Provides the newest and most up-to-date film services",
+        "stack": ["./react.png", "./tailwindcss.png", "./vite.png", "./redux.png"]
     },
     {
         "id": 4,
@@ -29,6 +32,7 @@
         "image": "./todolist.png",
         "link": "https://mission4-muhammad-ulil-albab-13054.vercel.app/",
         "github": "https://github.com/ulilalbabb/Mission4-Muhammad-Ulil-Albab-13054",
-        "description": "Helps increase productivity by recording all activities and tasks"
+        "description": "Helps increase productivity by recording all activities and tasks",
+        "stack": ["./html5.png", "./css3.png", "./javascript.png"]
     }
 ]

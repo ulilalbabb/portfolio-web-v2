@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from "framer-motion"
-import skills from "../Data/Icon.json"
+import skills from "../../Data/Icon.json"
 
-const MySkills = () => {
+const MyExpertise = () => {
     return (
         <section id="skills" className="py-24 bg-white">
             <div className="max-w-4xl mx-auto px-6 text-center">
@@ -37,4 +37,4 @@ const MySkills = () => {
     )
 }
 
-export default MySkills
+export default MyExpertise
