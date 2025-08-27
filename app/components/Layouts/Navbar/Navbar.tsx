@@ -81,7 +81,7 @@ const Navbar = () => {
                         ))}
 
                         <Button 
-                            variant='bg-yellow-600 px-4 py-2 hover:shadow-lg hover:bg-yellow-700'
+                            variant='bg-yellow-600 px-4 py-2 rounded-lg hover:shadow-lg hover:bg-yellow-700'
                             onClick={() => scrollToSection('#contact')}>
                             Hire Me
                         </Button>
