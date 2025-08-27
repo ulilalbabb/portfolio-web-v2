@@ -7,7 +7,7 @@ type ButtonProps = {
 const Button = ({children, variant, onClick}: ButtonProps) => {
     return (
         <button 
-            className={`rounded-lg cursor-pointer ${variant}`}
+            className={`cursor-pointer ${variant}`}
             onClick={onClick}
             >
                 {children}

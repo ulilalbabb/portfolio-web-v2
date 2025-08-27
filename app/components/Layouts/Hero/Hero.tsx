@@ -2,8 +2,17 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Button from "../../Elements/Button/Button"
 
 const HeroSection = () => {
+
+    const handleScroll = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
         <main 
             className="min-h-screen flex items-center bg-white px-6 pt-16"
@@ -34,19 +43,19 @@ const HeroSection = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1.2, duration: 0.8 }}
                         >
-                            <a
-                            href="#projects"
-                            className="px-5 py-3 inline-flex bg-yellow-600 text-white rounded-full hover:shadow-lg group hover:-translate-y-1 transition-transform duration-300 ease-in-out"
+                            <Button
+                                variant="px-5 py-3 inline-flex bg-yellow-600 text-white rounded-full hover:shadow-lg group hover:-translate-y-1 transition-transform duration-300 ease-in-out"
+                                onClick={() => handleScroll("projects")}
                             >
                                 View Projects 
                                 <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                            </a>
-                            <a
-                            href="#contact"
-                            className="px-5 py-3 border border-yellow-600 text-yellow-600 rounded-full hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 ease-in-out"
+                            </Button>
+                            <Button
+                                variant="px-5 py-3 border border-yellow-600 text-yellow-600 rounded-full hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 ease-in-out"
+                                onClick={() => handleScroll("contact")}
                             >
                                 Contact Me
-                            </a>
+                            </Button>
                         </motion.div>
                     </div>
                     <motion.div
