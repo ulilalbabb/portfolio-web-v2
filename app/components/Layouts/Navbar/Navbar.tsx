@@ -82,7 +82,7 @@ const Navbar = () => {
 
                         <Button 
                             variant='bg-yellow-600 px-4 py-2 rounded-lg hover:shadow-lg hover:bg-yellow-700'
-                            onClick={() => scrollToSection('#contact')}>
+                            onClick={() => scrollToSection('contact')}>
                             Hire Me
                         </Button>
                     </div>
@@ -121,9 +121,9 @@ const Navbar = () => {
                                     </motion.div>
                                 ))}
                                 <Button 
-                                    variant='bg-yellow-600 text-white px-4 py-2 hover:shadow-lg hover:translate-y-[-3px] transition-transform duration-300 ease-in-out'
+                                    variant='bg-yellow-600 rounded-lg text-white px-4 py-2 hover:shadow-lg hover:translate-y-[-3px] transition-transform duration-300 ease-in-out'
                                     onClick={() => {
-                                        scrollToSection('#contact');
+                                        scrollToSection('contact');
                                         setIsMobileMenuOpen(false);
                                     }}>
                                     Hire Me

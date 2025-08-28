@@ -4,6 +4,7 @@ import About from "./components/Layouts/About/About";
 import MySkills from "./components/Layouts/Expertise/Expertise";
 import Projects from "./components/Layouts/Projects/Projects";
 import ContactPage from "./components/Layouts/Contact/Contact";
+import Footer from "./components/Layouts/Footer/Footer";
 
 export default function Home() { 
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <MySkills></MySkills>
       <Projects></Projects>
       <ContactPage></ContactPage>
+      <Footer></Footer>
     </>
   );
 }
