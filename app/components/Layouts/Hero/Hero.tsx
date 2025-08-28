@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import Button from "../../Elements/Button/Button"
+import Button from "../../elements/Button/Button"
 
 const HeroSection = () => {
 
