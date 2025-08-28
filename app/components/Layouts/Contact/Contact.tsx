@@ -1,6 +1,6 @@
 'use client'
 
-import Button from "../../Elements/Button/Button"
+import Button from "../../elements/Button/Button"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Instagram, Github } from 'lucide-react';

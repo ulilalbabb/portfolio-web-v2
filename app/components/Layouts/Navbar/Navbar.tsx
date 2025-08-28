@@ -1,6 +1,6 @@
 'use client'
 
-import Button from "../../Elements/Button/Button";
+import Button from "../../elements/Button/Button";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
