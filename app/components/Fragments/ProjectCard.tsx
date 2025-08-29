@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import projects from "../Data/Projects.json"
+import Image from "next/image"
 
 const ProjectCard = () => {
     return (
@@ -13,24 +14,28 @@ const ProjectCard = () => {
                   whileHover={{ transition: { duration: 0.3 }, translateY: -10 }}
                   className="border border-yellow-600 rounded-2xl shadow-lg overflow-hidden"
                 >
-                  <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-48 object-cover" 
+                  />
                   <div className="p-4">
                     <h3 className="font-semibold text-xl mb-2">{project.title}</h3>
                     <p className="text-gray-600 mb-4">{project.description}</p>
                     
                     {/* Tech stack logos  */}
-                    <div className="flex gap-2 mb-4">
-                      {project.stack.map((stack, index) => (
-                        <img
-                          key={index}
+                    {/* <div className="flex gap-2 mb-4">
+                      {project.stack.map((stack, i) => (
+                        <Image
+                          key={i}
                           src={stack}
                           alt={stack}
-                          className="w-8 h-8"
+                          width={8}
+                          height={8}
                         />
                       ))}
-                    </div>
+                    </div> */}
 
-                    {/* Buttons */}
                     <div className="flex gap-3">
                       <a
                         href={project.github}

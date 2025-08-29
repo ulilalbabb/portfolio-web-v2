@@ -35,8 +35,8 @@ const About = () => {
           viewport={{ once: true }}
           className="text-lg leading-relaxed text-gray-700 mb-12"
         >
-            I'm an English literature student who is very curious about web development. I'm the type of person who likes to explore and try new things if it's interesting to me. Over the past year I've been sharpening my knowledge and skills in React.js and Next.js.
-            I enjoy solving problems and learning about new technologies, as well as providing creative ideas through design and code.
+            {`I'm an English literature student who is very curious about web development. I'm the type of person who likes to explore and try new things if it's interesting to me. Over the past year I've been sharpening my knowledge and skills in React.js and Next.js.
+            I enjoy solving problems and learning about new technologies, as well as providing creative ideas through design and code.`}
         </motion.p>
       </div>
     </section>
