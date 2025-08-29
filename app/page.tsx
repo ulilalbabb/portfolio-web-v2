@@ -5,17 +5,19 @@ import MySkills from "./components/Layouts/Expertise/Expertise";
 import Projects from "./components/Layouts/Projects/Projects";
 import ContactPage from "./components/Layouts/Contact/Contact";
 import Footer from "./components/Layouts/Footer/Footer";
+import WhatsappButton from "./components/elements/Whatsapp/Whatsapp";
 
 export default function Home() { 
   return (
     <>
-      <Navbar></Navbar>
-      <HeroSection></HeroSection>
-      <About></About>
-      <MySkills></MySkills>
-      <Projects></Projects>
-      <ContactPage></ContactPage>
-      <Footer></Footer>
+      <Navbar />
+      <HeroSection />
+      <About />
+      <MySkills />
+      <Projects />
+      <ContactPage />
+      <WhatsappButton/>
+      <Footer />
     </>
   );
 }
