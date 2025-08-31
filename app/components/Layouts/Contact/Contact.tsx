@@ -8,8 +8,55 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
+    const [formData, setFormData] = useState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        subject: "",
+        message: "",
+    })
+
+    const [status, setStatus] = useState("")
+
+    const handleChange = (e: any) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = (e: any) => {
+        e.preventDefault()
+
+        emailjs
+          .sendForm(
+            "service_k1iohgi",
+            "template_h1no3o3",
+            e.target,
+            "TWJkXEekI8wTJLk52",
+          )
+          .then(
+            () => {
+              setStatus("success")
+              setFormData({
+                firstname: "",
+                lastname: "",
+                email: "",
+                subject: "",
+                message: "",
+              },
+              )
+            },
+            () => {
+              setStatus("failed")
+            }
+          )
+    }
+
     return (
         <section id="contact" className="bg-white text-gray-900 py-20">
           <motion.div
@@ -47,36 +94,56 @@ const ContactPage = () => {
                 viewport={{ once: true }}
                 className="bg-gray-50 p-8 rounded-2xl shadow-lg border"
               >
-                <form className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <input
                       type="text"
                       placeholder="First Name"
                       className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
+                      value={formData.firstname}
+                      onChange={handleChange}
+                      name="firstname"
+                      required
                     />
                     <input
                       type="text"
                       placeholder="Last Name"
                       className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
+                      value={formData.lastname}
+                      onChange={handleChange}
+                      name="lastname"
+                      required
                     />
                   </div>
                   <input
                     type="email"
                     placeholder="Email Address"
                     className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
+                    value={formData.email}
+                    onChange={handleChange}
+                    name="email"
+                    required
                   />
                   <input
                     type="text"
                     placeholder="Subject"
                     className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    name="subject"
+                    required
                   />
                   <textarea
                     placeholder="Message"
-                    rows= {4}
                     className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
-                  ></textarea>
+                    value={formData.message}
+                    onChange={handleChange}
+                    name="message"
+                    required
+                  />
                   <Button
-                      variant="bg-yellow-600 flex gap-2 items-center justify-center w-full text-white px-6 py-2 rounded-full hover:bg-yellow-700 transition duration-300 ease-in-out">
+                      variant="bg-yellow-600 flex gap-2 items-center justify-center w-full text-white px-6 py-2 rounded-full hover:bg-yellow-700 transition duration-300 ease-in-out"
+                      type="submit">
                           <Send /> Send Message
                       </Button>
                 </form>

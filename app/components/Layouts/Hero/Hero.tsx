@@ -44,7 +44,7 @@ const HeroSection = () => {
                             transition={{ delay: 1.2, duration: 0.8 }}
                         >
                             <Button
-                                variant="px-5 py-3 inline-flex bg-yellow-600 text-white rounded-full hover:shadow-lg group hover:-translate-y-1 transition-transform duration-300 ease-in-out"
+                                variant="px-5 py-3 inline-flex bg-yellow-600 text-white text-xs md:text-sm items-center rounded-full hover:shadow-lg group hover:-translate-y-1 transition-transform duration-300 ease-in-out"
                                 onClick={() => handleScroll("projects")}
                             >
                                 View Projects 

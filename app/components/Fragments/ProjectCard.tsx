@@ -20,39 +20,43 @@ const ProjectCard = () => {
                     className="w-full h-48 object-cover" 
                   />
                   <div className="p-4">
-                    <h3 className="font-semibold text-xl mb-2">{project.title}</h3>
-                    <p className="text-gray-600 mb-4">{project.description}</p>
+                    <div>
+                      <h3 className="font-semibold text-xl mb-2">{project.title}</h3>
+                      <p className="text-gray-600 mb-4">{project.description}</p>
+                    </div>
                     
-                    {/* Tech stack logos  */}
-                    {/* <div className="flex gap-2 mb-4">
-                      {project.stack.map((stack, i) => (
-                        <Image
-                          key={i}
-                          src={stack}
-                          alt={stack}
-                          width={8}
-                          height={8}
-                        />
-                      ))}
-                    </div> */}
+                    <div>
+                      <div className="flex gap-2 mb-4">
+                        {project.stack.map((logo, index) => (
+                          <Image
+                            key={index}
+                            src={logo}
+                            alt={`Logo ${index}`}
+                            width={30}
+                            height={30}
+                          />
+                        ))}
+                      </div>
 
-                    <div className="flex gap-3">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        className="px-3 py-2 rounded-lg border border-yellow-600 hover:bg-yellow-600 hover:text-white transition"
-                      >
-                        View Code
-                      </a>
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        className="px-3 py-2 rounded-lg border border-yellow-600 hover:bg-yellow-600 hover:text-white hover:opacity-90 transition"
-                      >
-                        Live Demo
-                      </a>
+                      <div className="flex gap-3">
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          className="px-3 py-2 rounded-lg border border-yellow-600 hover:bg-yellow-600 hover:text-white transition"
+                          >
+                            View Code
+                        </a>
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          className="px-3 py-2 rounded-lg border border-yellow-600 hover:bg-yellow-600 hover:text-white hover:opacity-90 transition"
+                          >
+                            Live Demo
+                        </a>
+                      </div>
                     </div>
                   </div>
+                    {/* Tech stack logos  */}
                 </motion.div>
               ))}
             </div>
