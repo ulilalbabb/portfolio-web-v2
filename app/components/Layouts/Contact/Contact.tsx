@@ -8,8 +8,9 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
-import React, { useState } from "react";
+import { useState } from "react";
 import emailjs from '@emailjs/browser';
+import Input from "../../elements/Input/Input";
 
 type ContactForm = {
   firstname: string;
@@ -105,38 +106,34 @@ const ContactPage = () => {
               >
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
-                    <input
+                    <Input
                       type="text"
                       placeholder="First Name"
-                      className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
                       value={formData.firstname}
                       onChange={handleChange}
                       name="firstname"
                       required
                     />
-                    <input
+                    <Input
                       type="text"
                       placeholder="Last Name"
-                      className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
                       value={formData.lastname}
                       onChange={handleChange}
                       name="lastname"
                       required
                     />
                   </div>
-                  <input
+                  <Input
                     type="email"
                     placeholder="Email Address"
-                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
                     value={formData.email}
                     onChange={handleChange}
                     name="email"
                     required
                   />
-                  <input
+                  <Input
                     type="text"
                     placeholder="Subject"
-                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
                     value={formData.subject}
                     onChange={handleChange}
                     name="subject"
