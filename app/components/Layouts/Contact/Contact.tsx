@@ -73,16 +73,12 @@ const ContactPage = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-
             >
             <h1 
               className="text-3xl font-bold mb-6 text-center">
                 {`Let's `}
               <span 
-                className="bg-gradient-to-r from-yellow-600 to-gray-600 bg-clip-text text-transparent"
-                style={{ 
-                  WebkitBackgroundClip: "text", 
-                  WebkitTextFillColor: "transparent" }}
+                className="bg-gradient-to-r from-yellow-600 to-gray-600 bg-clip-text text-transparent text-gradient"
                 >
                   Connect
               </span>
