@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import Button from "../../elements/Button/Button"
+import Image from "next/image"
 
 const HeroSection = () => {
 
@@ -64,9 +65,11 @@ const HeroSection = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
                     >
-                    <img
+                    <Image
                         src="/ulil-2.jpg"
                         alt="Profile"
+                        width={500}
+                        height={500}
                         className="rounded-2xl shadow-lg grayscale hover:grayscale-0 transition duration-700 w-100 h-100 md:w-100 md:h-100"
                     />
                     </motion.div>

@@ -1,27 +1,27 @@
 [
     {
         "name": "Html",
-        "icon": "./html5.png"
+        "icon": "/html5.png"
     },
     {
         "name": "Css",
-        "icon": "./css3.png"
+        "icon": "/css3.png"
     },
     {
         "name": "Javascript",
-        "icon": "./javascript.png"
+        "icon": "/javascript.png"
     },
     {
         "name": "Typescript",
-        "icon": "./typescript.png"
+        "icon": "/typescript.png"
     },
     {
         "name": "React",
-        "icon": "./react.png"
+        "icon": "/react.png"
     },
     {
         "name": "Redux",
-        "icon": "./redux.png"
+        "icon": "/redux.png"
     },
     {
         "name": "Vite",
@@ -29,34 +29,34 @@
     },
     {
         "name": "Next.js",
-        "icon": "./nextdotjs.png"
+        "icon": "/nextdotjs.png"
     },
     {
         "name": "Tailwind",
-        "icon": "./tailwindcss.png"
+        "icon": "/tailwindcss.png"
     },
     {
         "name": "Bootstrap",
-        "icon": "./bootstrap.png"
+        "icon": "/bootstrap.png"
     },
     {
         "name": "Sass",
-        "icon": "./sass.png"
+        "icon": "/sass.png"
     },
     {
         "name": "Figma",
-        "icon": "./figma.png"
+        "icon": "/figma.png"
     },
     {
         "name": "Framer Motion",
-        "icon": "./Motion.png"
+        "icon": "/Motion.png"
     },
     {
         "name": "Git",
-        "icon": "./git.png"
+        "icon": "/git.png"
     },
     {
         "name": "Github",
-        "icon": "./github.png"
+        "icon": "/github.png"
     }
 ]

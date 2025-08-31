@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import skills from "../../Data/Icon.json"
+import Image from "next/image"
 
 const MyExpertise = () => {
     return (
@@ -28,7 +29,12 @@ const MyExpertise = () => {
                         viewport={{ once: true }}
                         className="flex flex-col items-center gap-4 hover:text-yellow-600"
                     >
-                        <img src={skill.icon} alt={skill.name} className="w-20 h-20 hover:scale-110 transition-transform duration-300" />
+                        <Image 
+                            src={skill.icon} 
+                            alt={skill.name}
+                            width={200}
+                            height={200} 
+                            className="w-20 h-20 hover:scale-110 transition-transform duration-300" />
                         <p className="text-lg font-semibold">{skill.name}</p>
                     </motion.div>
                 ))}

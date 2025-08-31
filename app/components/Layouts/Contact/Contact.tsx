@@ -8,11 +8,19 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
-import { useState } from "react";
+import React, { useState } from "react";
 import emailjs from '@emailjs/browser';
 
+type ContactForm = {
+  firstname: string;
+  lastname: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 const ContactPage = () => {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<ContactForm>({
         firstname: "",
         lastname: "",
         email: "",
@@ -20,23 +28,24 @@ const ContactPage = () => {
         message: "",
     })
 
-    const [status, setStatus] = useState("")
+    const [status, setStatus] = useState<string | null>("null")
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [name]: value
         })
     }
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
         emailjs
           .sendForm(
             "service_k1iohgi",
             "template_h1no3o3",
-            e.target,
+            e.currentTarget,
             "TWJkXEekI8wTJLk52",
           )
           .then(

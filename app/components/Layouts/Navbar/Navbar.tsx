@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+const navItems = [
+    { label: 'Home', id: 'home' },
+    { label: 'About', id: 'about' },
+    { label: 'Skills', id: 'skills' },
+    { label: 'Projects', id: 'projects' },
+    { label: 'Contact', id: 'contact' },
+]
+       
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [active, setActive] = useState('home');
-
-    const navItems = [
-        { label: 'Home', id: 'home' },
-        { label: 'About', id: 'about' },
-        { label: 'Skills', id: 'skills' },
-        { label: 'Projects', id: 'projects' },
-        { label: 'Contact', id: 'contact' },
-    ]
 
     // Function to scroll to a specific section
     const scrollToSection = (id: string) => {

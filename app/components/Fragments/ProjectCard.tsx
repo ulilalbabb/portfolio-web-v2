@@ -14,9 +14,11 @@ const ProjectCard = () => {
                   whileHover={{ transition: { duration: 0.3 }, translateY: -10 }}
                   className="border border-yellow-600 rounded-2xl shadow-lg overflow-hidden"
                 >
-                  <img 
+                  <Image 
                     src={project.image} 
                     alt={project.title} 
+                    width={500}
+                    height={500}
                     className="w-full h-48 object-cover" 
                   />
                   <div className="p-4">
