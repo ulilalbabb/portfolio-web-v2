@@ -79,7 +79,11 @@ const ContactPage = () => {
               className="text-3xl font-bold mb-6 text-center">
                 {`Let's `}
               <span 
-                className="bg-gradient-to-r from-yellow-600 to-gray-600 bg-clip-text text-transparent">
+                className="bg-gradient-to-r from-yellow-600 to-gray-600 bg-clip-text text-transparent"
+                style={{ 
+                  WebkitBackgroundClip: "text", 
+                  WebkitTextFillColor: "transparent" }}
+                >
                   Connect
               </span>
             </h1>
