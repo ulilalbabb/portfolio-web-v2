@@ -8,65 +8,19 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import Input from "../../elements/Input/Input";
 
-type ContactForm = {
-  firstname: string;
-  lastname: string;
-  email: string;
-  subject: string;
-  message: string;
-}
+// type ContactForm = {
+//   firstname: string;
+//   lastname: string;
+//   email: string;
+//   subject: string;
+//   message: string;
+// }
 
 const ContactPage = () => {
-    const [formData, setFormData] = useState<ContactForm>({
-        firstname: "",
-        lastname: "",
-        email: "",
-        subject: "",
-        message: "",
-    })
-
-    const [status, setStatus] = useState<string | null>("null")
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target
-        setFormData({
-            ...formData,
-            [name]: value
-        })
-    }
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-
-        emailjs
-          .sendForm(
-            "service_k1iohgi",
-            "template_h1no3o3",
-            e.currentTarget,
-            "TWJkXEekI8wTJLk52",
-          )
-          .then(
-            () => {
-              setStatus("success")
-              setFormData({
-                firstname: "",
-                lastname: "",
-                email: "",
-                subject: "",
-                message: "",
-              },
-              )
-            },
-            () => {
-              setStatus("failed")
-            }
-          )
-    }
-
     return (
         <section id="contact" className="bg-white text-gray-900 py-20">
           <motion.div
@@ -75,13 +29,8 @@ const ContactPage = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             >
             <h1 
-              className="text-3xl font-bold mb-6 text-center">
-                {`Let's `}
-              <span 
-                className="bg-gradient-to-r from-yellow-600 to-gray-600 bg-clip-text text-transparent text-gradient"
-                >
-                  Connect
-              </span>
+              className="text-3xl font-bold mb-6 text-center text-yellow-600">
+                {`Let's Connect`}
             </h1>
             <motion.div 
               initial={{ opacity: 0, scaleX: 0 }}
@@ -104,21 +53,17 @@ const ContactPage = () => {
                 viewport={{ once: true }}
                 className="bg-gray-50 p-8 rounded-2xl shadow-lg border"
               >
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <Input
                       type="text"
                       placeholder="First Name"
-                      value={formData.firstname}
-                      onChange={handleChange}
                       name="firstname"
                       required
                     />
                     <Input
                       type="text"
                       placeholder="Last Name"
-                      value={formData.lastname}
-                      onChange={handleChange}
                       name="lastname"
                       required
                     />
@@ -126,30 +71,25 @@ const ContactPage = () => {
                   <Input
                     type="email"
                     placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleChange}
                     name="user_email"
                     required
                   />
                   <Input
                     type="text"
                     placeholder="Subject"
-                    value={formData.subject}
-                    onChange={handleChange}
                     name="subject"
                     required
                   />
                   <textarea
                     placeholder="Message"
                     className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-yellow-600"
-                    value={formData.message}
-                    onChange={handleChange}
                     name="message"
                     required
                   />
                   <Button
                       variant="bg-yellow-600 flex gap-2 items-center justify-center w-full text-white px-6 py-2 rounded-full hover:bg-yellow-700 transition duration-300 ease-in-out"
-                      type="submit">
+                      type="submit"
+                      >
                           <Send /> Send Message
                       </Button>
                 </form>
