@@ -35,7 +35,7 @@ const MyExpertise = () => {
                             width={200}
                             height={200} 
                             className="w-20 h-20 hover:scale-110 transition-transform duration-300" />
-                        <p className="text-lg font-semibold relative z-10">{skill.name}</p>
+                        <p className="text-lg font-semibold relative z-10 text-black">{skill.name}</p>
                     </motion.div>
                 ))}
             </div>
