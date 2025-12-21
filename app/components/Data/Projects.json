@@ -1,6 +1,15 @@
 [
     {
         "id": 1,
+        "title": "Luminette",
+        "image": "/luminette.png",
+        "link": "https://luminette.vercel.app/",
+        "github": "https://github.com/ulilalbabb/my-app",
+        "description": "Luminette store website with product catalog house",
+        "stack": ["/nextdotjs.png", "/typescript.png", "/tailwindcss.png"]
+    },
+    {
+        "id": 2,
         "title": "Minimalis Ecommerce",
         "image": "/minimalis.png",
         "link": "https://minimalis-app.vercel.app/",
@@ -9,7 +18,7 @@
         "stack": ["/react.png", "/tailwindcss.png", "/redux.png"]
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "videobelajar course",
         "image": "/videobelajar.png",
         "link": "https://education-course-livid.vercel.app/",
@@ -18,7 +27,7 @@
         "stack": ["/react.png", "/tailwindcss.png", "/vite.png"]
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "Online Streaming movie",
         "image": "/chill.png",
         "link": "https://chill-app-nine.vercel.app/",
@@ -27,7 +36,7 @@
         "stack": ["/react.png", "/tailwindcss.png", "/vite.png", "/redux.png"]
     },
     {
-        "id": 4,
+        "id": 5,
         "title": "Todo List",
         "image": "/todolist.png",
         "link": "https://mission4-muhammad-ulil-albab-13054.vercel.app/",
