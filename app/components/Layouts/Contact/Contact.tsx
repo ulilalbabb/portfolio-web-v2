@@ -8,8 +8,6 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
-import { useState, useRef } from "react";
-import emailjs from '@emailjs/browser';
 import Input from "../../elements/Input/Input";
 
 // type ContactForm = {
